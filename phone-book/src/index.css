@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: rgb(0, 0, 0);
+  color: #ffffff95;
+  background-image: url("../public/Assets/Background.jpg");
+  background-size: cover; /* Ensure background image covers entire background */
+  background-repeat: no-repeat; /* Prevent background image from repeating */
+  font-size: 14px;
+}
+
+.back {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  transform: translate(0, 15%);
+}

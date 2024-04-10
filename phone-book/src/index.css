@@ -2,12 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   background-color: rgb(0, 0, 0);
   color: #ffffff95;
   background-image: url("../public/Assets/Background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 14px;
+} */
+
+body {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  /* background-image: url("../public/Assets/Background.jpg"); */
   background-size: cover; /* Ensure background image covers entire background */
   background-repeat: no-repeat; /* Prevent background image from repeating */
+  background-attachment: fixed; /* Keep background image fixed relative to viewport */
   font-size: 14px;
 }
 
@@ -15,4 +25,25 @@ body {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
   transform: translate(0, 15%);
+}
+
+/* .toastContainer {
+  overflow: hidden !important;
+  overflow-x: auto !important;
+  display: grid !important;
+  grid-gap: 20px !important;
+  user-select: none !important;
+  position: fixed !important;
+  top: -62px !important;
+  right: -478px !important;
+} */
+
+tr,
+th,
+td {
+  padding: 10px 50px;
+  margin: 0px 10px;
+  text-align: center;
+  border-bottom: 1px solid white;
+  /* border-right: 1px solid white; */
 }

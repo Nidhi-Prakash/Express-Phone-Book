@@ -11,6 +11,11 @@ app.use(express.json());
 app.use("/user", userRouter);
 app.use("/contacts", contactsRouter);
 
+app.use(express.static("../phone-book/build"));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "phone-book", "build", "index.html"));
+});
+
 const runServer = async () => {
   await createDbConnection();
   app.listen(PORT);

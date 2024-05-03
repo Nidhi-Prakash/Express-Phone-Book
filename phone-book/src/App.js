@@ -17,7 +17,7 @@ const App = () => {
           <Route path="/contacts" element={<ContactsTable />} />
         </Routes>
       </BrowserRouter>
-      <ToastContainer position="top-right" />
+      <ToastContainer delay={3000} position="top-right" />
     </div>
   );
 };

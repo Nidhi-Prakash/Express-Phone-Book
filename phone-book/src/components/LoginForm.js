@@ -36,68 +36,76 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="border-[1px] border-white shadow-white shadow-[0px_0px_10px_-2px_white] flex justify-center items-center flex-col mx-auto w-[300px] back box-border py-[110px] px-[15px] rounded-[15px]">
-      <div className="flex justify-center items-start flex-col mb-[20px] w-full">
-        <span className="text-[18px] font-medium text-white">Login</span>
+    <div className="border-[1px] border-white shadow-[0px_0px_10px_white] flex justify-center items-center flex-col mx-auto w-[30vw] back box-border py-[110px] px-[15px] rounded-[15px]">
+      <div className="flex justify-center items-start flex-col mb-[40px] w-full">
+        <span className="text-[22px] font-medium text-black">Login</span>
         <span>Welcome back pls login to your account</span>
       </div>
 
-      <div className="flex justify-start items-start flex-col mt-4 w-full h-[63px]">
-        <input
-          type="text"
-          name="emailId"
-          placeholder="Email"
-          value={userInfo.email}
-          onChange={(e) => {
-            setUserInfo({
-              ...userInfo,
-              email: e.target.value,
-            });
-            setShowEmailError(false);
-          }}
-          className="w-full focus:outline-none h-[34px] font-normal bg-transparent border-[1px] border-white rounded-[5px] px-[10px]"
-        />
-        <AiOutlineUser className="relative bottom-[25px] left-[238px]" />
+      <div className="w-full h-[80px]">
+        <div className="flex justify-between items-start mt-4 w-full gap-[10px]">
+          <input
+            type="text"
+            name="emailId"
+            placeholder="Email"
+            value={userInfo.email}
+            onChange={(e) => {
+              setUserInfo({
+                ...userInfo,
+                email: e.target.value,
+              });
+              setShowEmailError(false);
+            }}
+            className="w-full focus:outline-none h-[38px] font-normal bg-transparent border-[1px] border-black rounded-[5px] px-[10px] text-[16px]"
+          />
+          <span className="relative top-[8px]">
+            <AiOutlineUser />
+          </span>
+        </div>
         {showEmailError && (
-          <span className="text-[10px] font-normal relative bottom-[8px] text-[#da5947] left-1">
+          <span className="text-[14px] font-normal relative top-[2px] text-[#da5947] left-1">
             Email Id is required!
           </span>
         )}
       </div>
 
-      <div className="flex justify-start items-start flex-col mt-4 w-full h-[63px]">
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={userInfo.password}
-          onChange={(e) => {
-            setUserInfo({
-              ...userInfo,
-              password: e.target.value,
-            });
-            setShowPasswordError(false);
-          }}
-          className="w-full focus:outline-none h-[34px] font-normal bg-transparent border-[1px] border-white rounded-[5px] px-[10px]"
-        />
-        <FaRegEyeSlash className="relative bottom-[25px] left-[238px]" />
+      <div className="w-full h-[80px]">
+        <div className="flex justify-start items-start mt-4 w-full gap-[10px]">
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={userInfo.password}
+            onChange={(e) => {
+              setUserInfo({
+                ...userInfo,
+                password: e.target.value,
+              });
+              setShowPasswordError(false);
+            }}
+            className="w-full focus:outline-none h-[38px] font-normal bg-transparent border-[1px] border-black rounded-[5px] px-[10px] text-[16px]"
+          />
+          <span className="relative top-[8px]">
+            <FaRegEyeSlash />
+          </span>
+        </div>
         {showPasswordError && (
-          <span className="text-[10px] font-normal relative bottom-[8px] text-[#da5947] left-1">
+          <span className="text-[14px] font-normal relative top-[2px] text-[#da5947] left-1">
             Password is required!
           </span>
         )}
       </div>
 
-      <div className="flex justify-center items-center w-full mt-[25px]">
+      <div className="flex justify-center items-center w-full mt-[45px]">
         <button
-          className="text-white py-[4px] w-full rounded-[5px] bg-gradient-to-r from-[#e15206] to-[#a546d1]"
+          className="text-[16px] text-white py-[8px] w-full rounded-[5px] bg-[#613f75]"
           onClick={() => handleSubmit(userInfo.email, userInfo.password)}
         >
           LogIn
         </button>
       </div>
 
-      <div className="relative top-[100px] text-[12px]">
+      <div className="relative top-[100px] text-[14px]">
         Don't have an account.{" "}
         <span>
           <Link to="/register" className="underline">

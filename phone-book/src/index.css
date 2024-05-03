@@ -13,30 +13,30 @@
 
 body {
   background-color: rgb(0, 0, 0);
-  color: white;
-  /* background-image: url("../public/Assets/Background.jpg"); */
-  background-size: cover; /* Ensure background image covers entire background */
-  background-repeat: no-repeat; /* Prevent background image from repeating */
-  background-attachment: fixed; /* Keep background image fixed relative to viewport */
+  color: black;
+  background-image: url("../public/Assets/bg-4");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-size: 14px;
 }
 
 .back {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  transform: translate(0, 15%);
+  backdrop-filter: blur(15px);
+  transform: translate(0, 25%);
 }
 
-/* .toastContainer {
-  overflow: hidden !important;
-  overflow-x: auto !important;
-  display: grid !important;
-  grid-gap: 20px !important;
-  user-select: none !important;
-  position: fixed !important;
-  top: -62px !important;
-  right: -478px !important;
-} */
+.back-no-transform {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.back-add-contact {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  margin-top: 12%;
+}
 
 tr,
 th,
@@ -44,6 +44,9 @@ td {
   padding: 10px 50px;
   margin: 0px 10px;
   text-align: center;
-  border-bottom: 1px solid white;
-  /* border-right: 1px solid white; */
+  border-bottom: 1px solid black;
+}
+
+.MuiBox-root:focus {
+  outline: none;
 }

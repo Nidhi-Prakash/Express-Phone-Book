@@ -41,7 +41,7 @@ export const loginUser = async (req, res) => {
         { expiresIn: "15m" }
       );
       res
-        .status(200)
+        .status(201)
         .json({ message: "Logged in successfully.", token: accessToken });
     } else {
       res.status(400).json({ message: "Passowrd is incorrect" });
@@ -50,4 +50,8 @@ export const loginUser = async (req, res) => {
     res.status(500);
     throw new Error("Server Error");
   }
+};
+
+export const getCurrentUser = async (req, res) => {
+  res.json(req.user);
 };

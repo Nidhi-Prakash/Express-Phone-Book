@@ -51,9 +51,42 @@ export const getAllContacts = async () => {
   }
 };
 
-export const editContact = async () => {
+export const editContact = async (Id, Name, Phone_Number) => {
   try {
-    console.log("inside edit contact func");
+    const body = { Name, Phone_Number };
+    const response = await axios.put(`contacts/${Id}`, body, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    });
+    return response;
+  } catch (error) {
+    errorToast(error.response.data.message);
+  }
+};
+
+export const addNewContact = async (Name, Phone_Number) => {
+  try {
+    const body = { Name, Phone_Number };
+    const response = await axios.post(`contacts`, body, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    });
+    return response;
+  } catch (error) {
+    errorToast(error.response.data.message);
+  }
+};
+
+export const deleteContact = async (Id) => {
+  try {
+    const response = await axios.delete(`contacts/${Id}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    });
+    return response;
   } catch (error) {
     errorToast(error.response.data.message);
   }

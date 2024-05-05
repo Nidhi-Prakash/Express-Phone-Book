@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import { userRouter } from "./routes/userRouter.js";
 import { createDbConnection } from "./config/DbConnection.js";
 import { contactsRouter } from "./routes/contactsRouter.js";
@@ -7,6 +8,7 @@ const app = express();
 
 const PORT = 5000;
 
+app.use(cors());
 app.use(express.json());
 app.use("/user", userRouter);
 app.use("/contacts", contactsRouter);

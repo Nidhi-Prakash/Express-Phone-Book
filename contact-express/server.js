@@ -12,8 +12,8 @@ app.use("/user", userRouter);
 app.use("/contacts", contactsRouter);
 
 app.use(express.static("../phone-book/build"));
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "phone-book", "build", "index.html"));
+app.get('*', (req, res) => {
+  res.sendFile('public/index.html', { root: __dirname });
 });
 
 const runServer = async () => {

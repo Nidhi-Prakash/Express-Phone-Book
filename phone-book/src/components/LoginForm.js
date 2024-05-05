@@ -23,6 +23,7 @@ const LoginForm = () => {
       return; // Add return statement to exit function
     }
     const result = await loginUser(email, password);
+    console.log('res', result);
     if (result.status === 201) {
       toast.success("Logged in successfully.");
       setUserInfo({
